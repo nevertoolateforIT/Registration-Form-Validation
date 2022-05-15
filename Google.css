@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#registration-page{
+    height: 100%;
+    background:white;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    color:gray;
+}
+.signup-form{
+    flex:1;
+    max-width: 600px;
+    border-radius: 10px;
+    border:1px solid lightgray;
+    margin-top: 15em;
+
+}
+.form-header {
+    padding: 15px 5px;
+}
+
+.form-header h1 {
+    text-align: left;
+    font-size: 30px;
+    padding-left: 5px;
+    color: #202124;
+}
+.form-header h2 {
+    text-align: left;
+    font-size: 20px;
+    padding-left: 5px;
+    color: #202124;
+}
+.row{
+    display:flex;
+}
+
+.input-group {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    margin: 10px 5px;
+}
+.text-input{
+    display: flex;
+    margin: 10px 5px;
+}
+input [type="text"]{
+    border:2px solid gray;
+    border-radius:4px;
+    outline: none;
+    font-size: 18px;
+    height: 25px; 
+    padding-left:10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+input [type="email"]{
+    border:2px solid gray;
+    border-radius:4px;
+    outline: none;
+    font-size: 18px;
+    height: 5em; 
+    width: 36em;
+    padding-left:10px;
+    padding-right: 10px;
+    text-align: center;
+}
+#text{
+    color:darkgrey;
+    font-size: 10px;
+    text-align: justify;
+}
+.registration-form{
+    padding: 5px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top:auto;
+    margin-bottom: auto;
+}
+.footer-group{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    flex-wrap:no-wrap;
+    margin: 10px 5px;
+}
+
+button {
+    border:1px solid gray;
+    border-radius: 4px;
+    height: 2.5em; 
+    width: 5em;
+    font-size: 18px;
+    text-align: center; 
+    background-color: blue;
+    color: white;
+    display: flex;
+    align-self: flex-end;
+    margin-right: 50px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+a:link{
+    text-decoration:none;
+    color: blue;
+    padding-left: 5px;
+    font-size: 15px;
+}
+img{
+    height: 3em;
+    width: 5em;
+    padding-left: 5px;
+}

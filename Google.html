@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Google.css">
+</head>
+<body>
+    <section id="registration-page"> 
+        <div class="signup-form"> 
+            <div class="form-header"> 
+    <img src="./assets/logo.svg" alt="logo"/>
+    <h1>Create a Google Account</h1>
+    <h2>Enter your child's account information</h2>
+</div>
+    <form class="registration_form" id="form" onsubmit="return Validate()"> 
+        <div class="row">
+            <div class="input-group"> 
+                <input type ="text" id="firstname" placeholder="First Name">
+            </div>
+            <div class="input-group"> 
+        <input type ="text" id="lastname" placeholder="Last Name">
+        </div>
+    </div>
+        <div class="row"> 
+            <div class ="input-group"> 
+        <input type ="email" id="username" placeholder="Username">
+        <p id="text">You can use letters, numbers & periods</p>
+    </div>
+    </div>
+    <div class="row"> 
+        <div class="input-group">
+        <input type ="text" id="password" placeholder="Password">
+        <p id="text">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+    </div>
+    
+    <div class="input-group">
+        <input type ="text" id="confirm" placeholder="Confirm">
+    </div>    
+    </div>
+    <div class="row"> 
+        <div class="footer-group">
+        <a href="https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2Fdeleteaccount&parent_directed=true&flowName=GlifWebSignIn&flowEntry=AddSession">Sign in instead</a>
+    </div>
+    <div class="footer-group">
+        <button type="submit" id="submit" >Submit</button>
+    </div>
+    </div>
+</form>
+
+   
+</div>
+</section>
+
+    <script src="Google.js"></script>
+    
+</body>
+</html>
