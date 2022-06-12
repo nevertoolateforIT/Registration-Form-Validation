@@ -1,61 +1,33 @@
 
-
-function Validate(){   
-const firstname =document.getElementById ('firstname');
-const lastname =document.getElementById ('lastname');
-const email =document.getElementById ('username');
 const password =document.getElementById ('password');
 const confirm =document.getElementById ('confirm');
-const isValidEmail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+let errors =[];
 
-let messages ="";
-firstname.style.borderColor="gray";
-lastname.style.borderColor="gray";
-email.style.borderColor="gray";
-password.style.borderColor="gray";
-confirm.style.borderColor="gray";
-
-if (firstname.value == ""){
-    messages +=('Enter your first name \n');
-    firstname.style.borderColor="red";
+function checkValidity (input){
+    let validity=input.validity;
+    if (validity.valueMissing){errors.push ('Field ' + input.placeholder + ' is missing');}
+    if (validity.patternMismatch) {errors.push (input.placeholder + ' format requirements are not met');}
+    if (validity.typeMismatch) {errors.push (input.placeholder + 'input type is incorrect');}
+    if (password.value != confirm.value){errors.push ('Confirmation does not match the password');}
 }
 
-if (lastname.value == ""){
-    messages +=('Enter your last name \n');
-    lastname.style.borderColor="red";
-}
+// function ValidateEmail (emailField){
+//     let isValidEmail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//     if (emailField.value.match(isValidEmail)){
+//         return true;
+//     }
+//     else {errors.push ('Email requirements are not met');
+//     return false;
+// }
 
-if (email.value == ""){
-    messages +=('Enter your username \n');
-    email.style.borderColor="red";
-}
 
-else if (!isValidEmail.test(email.value)) {
-    messages +=('Please provide a valid email address');
-    email.style.borderColor="red";
-}
+function checkAll(){
+    errors=[];
+    let inputs=document.querySelectorAll("input");
 
-if (password.value == ""){
-    messages +=('Enter your password \n');
-    password.style.borderColor="red";
-}
-else if (password.value.length < 8){
-    messages += ('Your password must be at least 8 characters \n'); 
-    password.style.borderColor="red";
+    for (let input of inputs){
+        checkValidity(input);
     }
 
-if (confirm.value == ""){
-    messages +=('Confirm your password \n');
-    confirm.style.borderColor="red";
-}
-
-else if (password.value != confirm.value){
-    messages += ('Your password does not match \n');
-    confirm.style.borderColor="red";
-}
-
-if (messages !=""){
-    alert (messages); 
-    return false;
-}  
+    document.getElementById ('errorsInfo').innerHTML =errors.join ('. <br>');
 }

@@ -15,38 +15,38 @@
     <h1>Create a Google Account</h1>
     <h2>Enter your child's account information</h2>
 </div>
-    <form class="registration_form" id="form" onsubmit="return Validate()"> 
+    <form class="registration_form" id="form" novalidate> 
         <div class="row">
             <div class="input-group"> 
-                <input type ="text" id="firstname" placeholder="First Name">
+                <input type ="text" id="firstname" placeholder="First Name" required>
             </div>
             <div class="input-group"> 
-        <input type ="text" id="lastname" placeholder="Last Name">
+        <input type ="text" id="lastname" placeholder="Last Name" required>
         </div>
     </div>
         <div class="row"> 
             <div class ="input-group"> 
-        <input type ="email" id="username" placeholder="Username">
-        <p id="text">You can use letters, numbers & periods</p>
+        <input type ="email" id="username" placeholder="Username" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" required/>
     </div>
     </div>
     <div class="row"> 
         <div class="input-group">
-        <input type ="text" id="password" placeholder="Password">
-        <p id="text">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+        <input type ="password" id="password" placeholder="Password" pattern="/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/" required/>
     </div>
     
     <div class="input-group">
-        <input type ="text" id="confirm" placeholder="Confirm">
+        <input type ="password" id="confirm" placeholder="Confirm" pattern="/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/" required/>
     </div>    
     </div>
     <div class="row"> 
         <div class="footer-group">
         <a href="https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2Fdeleteaccount&parent_directed=true&flowName=GlifWebSignIn&flowEntry=AddSession">Sign in instead</a>
     </div>
+    <div id="errorsInfo"></div>
     <div class="footer-group">
-        <button type="submit" id="submit" >Submit</button>
+        <button type="button" id="submit" onclick=checkAll()>Submit</button>
     </div>
+    
     </div>
 </form>
 
