@@ -31,3 +31,26 @@ function checkAll(){
 
     document.getElementById ('errorsInfo').innerHTML =errors.join ('. <br>');
 }
+postBtn.onclick=function(e){
+    e.preventDefault();
+
+    let user={
+        firstname: document.getElementById("firstname").value,
+        lastname: document.getElementById("lastname").value,
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value,
+        confirm: document.getElementById("confirm").value,
+    }
+    console.log(user)
+    fetch("https://httpbin.org/post",
+    {
+        method:'POST',
+        body:JSON.stringify(user),
+        headers:{
+            'Content-Type':'application/json;cahrset=utf-8'
+        },
+    })
+    .then(response => response.json())
+    .then (user => { console.log(user);
+    })
+}
